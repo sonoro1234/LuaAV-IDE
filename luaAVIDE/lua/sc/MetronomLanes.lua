@@ -103,6 +103,7 @@ function setMetronomLanes(timestamp)
 
 	theMetro.oldtimestamp = timestamp
 	--lanes.timer(scriptlinda,"metronomLanes",theMetro.period,0)
+	collectgarbage("collect")
 end
 
 theMetro:play(120,-4,0,100)
