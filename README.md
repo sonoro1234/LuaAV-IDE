@@ -3,7 +3,7 @@ LuaAV-IDE
 
 Quick and dirty adaptation os Lua2SC ide for LuaAV
 
-Needs wxLua.
+Needs wxLua and LuaLanes.
 
 Run with: luajit AVIDE.lua
 
