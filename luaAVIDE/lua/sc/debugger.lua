@@ -95,11 +95,12 @@ function Debugger.debug_hook (event, line)
 		if cancel_test() then
 			error(lanes.cancel_error)
 		end
+		if debuggerlinda:receive(0,"break") then
+			Debugger.step_into = true
+			Debugger.step_over = false
+		end
 	end
-	if debuggerlinda:receive(0,"break") then
-		Debugger.step_into = true
-		Debugger.step_over = false
-	end
+
 	if Debugger.breakpoints[line] or Debugger.step_into or Debugger.step_over then
 		local thread = coroutine.running() or 0
 		local debuginfo = debug.getinfo(2,"S")
